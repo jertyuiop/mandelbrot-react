@@ -16,7 +16,7 @@ const Canvas = () => {
 
     }, []);
 
-    return <canvas ref={canvasRef} />;
+    return <canvas ref={canvasRef}/>;
 };
 
 export default Canvas;
