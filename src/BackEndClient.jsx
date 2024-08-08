@@ -3,12 +3,13 @@ import axios from 'axios';
 
 const BackEndClientComponent = async (props) => {
     const URL = 'http://localhost:8090/v1/getMandelbrotSet';
-    const { noOfPixelsInXAxis, noOfPixelsInYAxis, smallestReal, largestReal, smallestIm, largestIm } = props;
+    const { pixelsInXAxis, pixelsInYAxis, smallestReal, largestReal, smallestIm, largestIm, iterations } = props;
     console.log('fetching data, queryParams: ' + props)
     try{
         const queryParams = {
-            noOfPixelsInXAxis: noOfPixelsInXAxis,
-            noOfPixelsInYAxis: noOfPixelsInYAxis,
+            iterations: iterations,
+            pixelsInXAxis: pixelsInXAxis,
+            pixelsInYAxis: pixelsInYAxis,
             smallestReal: smallestReal,
             largestReal: largestReal,
             smallestIm: smallestIm,

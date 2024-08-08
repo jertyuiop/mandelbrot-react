@@ -1,8 +1,7 @@
 import React, {useRef, useEffect} from 'react';
 
-const Canvas = () => {
+const Canvas = ({mandelbrotSet, parameters}) => {
     const canvasRef = useRef(null);
-
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
@@ -12,7 +11,13 @@ const Canvas = () => {
         canvas.height = window.innerHeight;
 
         context.fillStyle = 'red';
-        context.fillRect(400, 25, 1000, 1000);
+        context.fillRect(400, 25, parameters.pixelsInXAxis, parameters.pixelsInYAxis);
+        console.log("Canvas props");
+        console.log(mandelbrotSet);
+        console.log("Canvas parameters");
+        console.log(parameters);
+
+
 
     }, []);
 
